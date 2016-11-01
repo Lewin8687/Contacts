@@ -1,0 +1,31 @@
+﻿.contactLabel {
+    text-align: right;
+}
+table {
+    width:100%;
+    border-spacing:inherit;
+}
+@media (max-width: 1000px) {
+    .col_1{
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;       
+    } 
+    .col_2{
+        width:100%; 
+        text-align: center;
+        display:normal;
+        visibility:visible   
+    }
+}
+@media (min-width: 1000px) {
+    .col_2{ 
+        width:0;
+        height:0;
+        opacity:0;
+        display: none;
+        visibility: collapse   
+    }
+}

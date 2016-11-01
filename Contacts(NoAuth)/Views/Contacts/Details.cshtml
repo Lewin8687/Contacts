@@ -1,0 +1,93 @@
+﻿@using Contacts_NoAuth_.Models;
+
+@model ContactDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+<hr />
+<h2>Details</h2>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(model => model.Contact.FirstName, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.FirstName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contact.LastName, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.LastName)
+        </div>
+    </div>
+      
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contact.Email, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Email)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contact.Phone, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Phone)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contact.Postal, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Postal)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contact.Address, htmlAttributes: new { @class = "contactLabel col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.Address)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>
+            <label class="contactLabel col-sm-2" for="Deleted">Deleted</label>
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact.IsDeleted)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-2">
+            @Html.ActionLink("Back", "Index", null, htmlAttributes: new { @class = "btn btn-primary" })
+        </div>
+        <div class="col-xs-10">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Contact.ID }, htmlAttributes: new { @class = "btn btn-warning" })
+        </div>
+    </div>
+</div>
+
+<div>
+    <table class="table">
+
+        @foreach (var item in Model.History)
+        {
+            <tr>
+                <td class="col-xs-2">
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td class="col-xs-10">
+                    @Html.DisplayFor(modelItem => item.Action)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
